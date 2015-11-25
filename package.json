@@ -12,7 +12,6 @@
     "*.js",
     "*.es6",
     "*.css",
-    "*.json",
     "assets/*",
     "!karma.conf.js",
     "!testbundle.js"
@@ -116,8 +115,8 @@
     "doc:watch": "parallelshell 'npm run doc:html:watch' 'npm run doc:js:watch' 'npm run doc:css:watch'",
     "lint": "eslint $npm_package_config_lint_opts .",
     "pages": "git stash save -u pages-stash && git branch -D gh-pages; git checkout --orphan gh-pages && git add -f $npm_package_config_ghpages_files && git commit -anm'ghpages' && git push origin HEAD:gh-pages -f",
-    "prepages": "npm run build && npm run doc",
-    "prepublish": "npm run build && babel . -d . -x .es6 --ignore node_modules",
+    "prepages": "npm run doc",
+    "prepublish": "babel . -d . -x .es6 --ignore node_modules",
     "prepublish:watch": "npm run prepublish -- -w",
     "pretest": "npm run lint",
     "provision": "devpack-configure ./package.json",

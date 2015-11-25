@@ -1,4 +1,53 @@
 .subscribe-message {
   font-size: 1rem;
   background: var(--color-berlin);
+  color: var(--color-beijing);
+  padding: var(--grid-spacing-sheep) var(--grid-gutter-s);
+  text-decoration: none;
+  display: block;
+  width: 100%;
+  display: table;
+  box-sizing: border-box;
+}
+
+.subscribe-message__count {
+  float: left;
+}
+
+.subscribe-message__counter-label,
+.subscribe-message__count {
+  line-height: 1em;
+  vertical-align: middle;
+  height: 1em;
+  padding: var(--subscribe-message__counter__padding, 0.5em);
+}
+
+.subscribe-message__count {
+  background: var(--subscribe-message__counter__background, var(--color-honolulu));
+  color: var(--subscribe-message__counter__color, var(--color-thimphu));
+  border-radius: var(--subscribe-message__counter__border-radius, 06em);
+  display: block;
+  letter-spacing: 0.5em;
+  text-indent: 0.5em;
+  text-align: center;
+}
+
+.subscribe-message__counter-label {
+  margin: 0 0.20em;
+  display: inline-block;
+}
+
+.subscribe-message__message,
+.subscribe-message__counter {
+  display: table-cell;
+}
+
+.subscribe-message__additional-title {
+  margin-left: var(--grid-gutter-m);
+}
+
+@media (width <= 601px) {
+  .subscribe-message__additional-title {
+    display: none;
+  }
 }
