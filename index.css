@@ -9,7 +9,6 @@
   display: table;
   box-sizing: border-box;
   font-family: var(--subscribe-message__font-family, var(--fontfamily-body));
-  line-height: 1.2em;
   position: relative;
 }
 
@@ -51,6 +50,7 @@
 .subscribe-message__message {
   display: table-cell;
   vertical-align: middle;
+  line-height: 1.7em;
 }
 
 .subscribe-message__counter {
@@ -78,7 +78,7 @@
 
 @media (width <= 800px) and (width >= 569px) {
   .subscribe-message__counter + .subscribe-message__message {
-    padding-left: 100px;
+    padding-left: var(--subscribe-message__counter__mobile-padding-left, 100px);
   }
 }
 
@@ -87,12 +87,6 @@
     display: none;
   }
   .subscribe-message__counter + .subscribe-message__message {
-    padding-left: 120px;
-  }
-}
-
-@media (width <= 399px) {
-  .subscribe-message__counter-label {
-    display: none;
+    padding-left: var(--subscribe-message__counter__mobile-padding-left, 100px);
   }
 }
