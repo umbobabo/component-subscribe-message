@@ -27,12 +27,17 @@ export default class SubscribeMessage extends React.Component {
   render() {
     return (
       <a className={`subscribe-message ${this.props.className}`} href="">
-        {(this.props.counter) ?
-          <div className="subscribe-message__counter">
-            <div className="subscribe-message__count">{this.props.counter}</div>
-            <div className="subscribe-message__counter-label">{this.props.counterLabel}</div>
-          </div> : ''}
+        <div className="subscribe-message__inner-wrapper">
+          {(() => {
+            if (this.props.counter) {
+              return (<div className="subscribe-message__counter">
+                  <div className="subscribe-message__count">{this.props.counter}</div>
+                  <div className="subscribe-message__counter-label">{this.props.counterLabel}</div>
+                </div>);
+            }
+          })()}
         {this.props.children}
+        </div>
       </a>
     );
   }

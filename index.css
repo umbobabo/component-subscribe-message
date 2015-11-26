@@ -1,53 +1,95 @@
+:root {
+  /** Modular scale **/
+  --scale-factor: 1.125;  /* Major second */
+
+  --text-size-step-0: 1em;
+  --text-size-step--1: calc( var(--text-size-step-0)  / var(--scale-factor) );
+  --text-size-step--2: calc( var(--text-size-step--1) / var(--scale-factor) );
+  --text-size-step--3: calc( var(--text-size-step--2) / var(--scale-factor) );
+  --text-size-step--4: calc( var(--text-size-step--3) / var(--scale-factor) );
+
+}
+
 .subscribe-message {
   font-size: 1rem;
   background: var(--color-berlin);
   color: var(--color-beijing);
-  padding: var(--grid-spacing-sheep) var(--grid-gutter-s);
+  padding: var(--grid-spacing-rabbit) var(--grid-gutter-s);
   text-decoration: none;
   display: block;
   width: 100%;
   display: table;
   box-sizing: border-box;
+  font-family: var(--fontfamily-body);
+  line-height: 1.2em;
 }
 
-.subscribe-message__count {
-  float: left;
+.subscribe-message__inner-wrapper {
+  display: table-row;
 }
 
 .subscribe-message__counter-label,
 .subscribe-message__count {
-  line-height: 1em;
+  line-height: 1.2em;
   vertical-align: middle;
   height: 1em;
   padding: var(--subscribe-message__counter__padding, 0.5em);
 }
 
 .subscribe-message__count {
+  float: left;
   background: var(--subscribe-message__counter__background, var(--color-honolulu));
   color: var(--subscribe-message__counter__color, var(--color-thimphu));
   border-radius: var(--subscribe-message__counter__border-radius, 06em);
   display: block;
-  letter-spacing: 0.5em;
-  text-indent: 0.5em;
+  letter-spacing: 0.3em;
+  text-indent: 0.3em;
   text-align: center;
+  font-size: var(--text-size-step--4);
+  /* TODO: Review this when we have the font */
+  font-family: 'Halifax Bold';
 }
 
 .subscribe-message__counter-label {
   margin: 0 0.20em;
   display: inline-block;
+  margin-right: var(--grid-gutter-m);
+  font-size: var(--text-size-step--3);
+  /* TODO: Review this when we have the font */
+  font-family: 'Halifax Light';
 }
 
 .subscribe-message__message,
 .subscribe-message__counter {
   display: table-cell;
+  vertical-align: middle;
+}
+
+.subscribe-message__counter {
+  white-space: nowrap;
 }
 
 .subscribe-message__additional-title {
-  margin-left: var(--grid-gutter-m);
+  margin-left: 1em;
+  /* TODO: Review this when we have the font */
+  font-family: 'Halifax Light';
+  color: var(--color-moscow);
+}
+
+.subscribe-message__message {
+  width: 100%;
+  text-align: center;
+  font-size: var(--text-size-step--2);
 }
 
 @media (width <= 601px) {
   .subscribe-message__additional-title {
+    display: none;
+  }
+}
+
+@media (width <= 399px) {
+  .subscribe-message__counter-label {
     display: none;
   }
 }

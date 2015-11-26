@@ -7,8 +7,5 @@ export default (
     <br/>
     <SubscribeMessage counter="1/3" />
     <br/>
-    <SubscribeMessage counter="1/3">
-      Overwriting text
-    </SubscribeMessage>
   </div>
 );

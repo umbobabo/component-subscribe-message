@@ -13,7 +13,7 @@ describe(`A subscribe message`, () => {
     it(`it can have a counter with a label`, () => {
       const shallowRenderer = TestUtils.createRenderer();
       shallowRenderer.render(React.createElement(SubscribeMessage, { counter: '1/3' }));
-      const componentChildren = shallowRenderer.getRenderOutput().props.children;
+      const componentChildren = shallowRenderer.getRenderOutput().props.children.props.children;
       componentChildren.length.should.equal(2);
       const counter = componentChildren[0];
       counter.props.className.should.equal('subscribe-message__counter');
@@ -27,16 +27,14 @@ describe(`A subscribe message`, () => {
     it(`it could not have a counter`, () => {
       const shallowRenderer = TestUtils.createRenderer();
       shallowRenderer.render(React.createElement(SubscribeMessage, {}));
-      const componentChildren = shallowRenderer.getRenderOutput().props.children;
-      const counter = componentChildren[0];
-      counter.should.equal('');
+      const componentChildren = shallowRenderer.getRenderOutput().props.children.props.children;
       const message = componentChildren[1];
       message.props.className.should.equal('subscribe-message__message');
     });
     it(`it have a deafult message`, () => {
       const shallowRenderer = TestUtils.createRenderer();
       shallowRenderer.render(React.createElement(SubscribeMessage, {}));
-      const componentChildren = shallowRenderer.getRenderOutput().props.children;
+      const componentChildren = shallowRenderer.getRenderOutput().props.children.props.children;
       const message = componentChildren[1];
       const title = message.props.children[0];
       title.props.className.should.equal('subscribe-message__title');
@@ -49,7 +47,7 @@ describe(`A subscribe message`, () => {
       const shallowRenderer = TestUtils.createRenderer();
       shallowRenderer.render(React.createElement(SubscribeMessage,
          { children: (<div className="justaclass">Cool</div>) }));
-      const componentChildren = shallowRenderer.getRenderOutput().props.children;
+      const componentChildren = shallowRenderer.getRenderOutput().props.children.props.children;
       const message = componentChildren[1];
       message.props.className.should.equal('justaclass');
       message.props.children.should.be.equal('Cool');
