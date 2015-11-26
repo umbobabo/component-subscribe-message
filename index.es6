@@ -20,7 +20,7 @@ export default class SubscribeMessage extends React.Component {
         </div>
       ),
       counterLabel: 'articles read.',
-      href: 'http://www.google.com',
+      href: 'https://subscriptions.economist.com',
     };
   }
 
