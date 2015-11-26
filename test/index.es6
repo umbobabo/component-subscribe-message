@@ -46,6 +46,15 @@ describe(`A subscribe message`, () => {
       additionalTitle.props.className.should.equal('subscribe-message__additional-title');
       additionalTitle.props.children.should.be.equal('for unlimited access to The Economist');
     });
+    it(`it have a link and a target`, () => {
+      const shallowRenderer = TestUtils.createRenderer();
+      shallowRenderer.render(React.createElement(SubscribeMessage, {}));
+      const linkProps = shallowRenderer.getRenderOutput().props;
+
+      linkProps.className.indexOf('subscribe-message').should.be.at.least(0);
+      linkProps.href.should.be.equal('https://subscriptions.economist.com');
+      linkProps.target.should.be.equal('_blank');
+    });
     it(`default message can be overwritten`, () => {
       const shallowRenderer = TestUtils.createRenderer();
       shallowRenderer.render(React.createElement(SubscribeMessage,

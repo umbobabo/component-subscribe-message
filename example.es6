@@ -3,9 +3,9 @@ import React from 'react';
 
 export default (
   <div>
-    <SubscribeMessage />
+    <SubscribeMessage href="https://subscriptions.economist.com"/>
     <br/>
-    <SubscribeMessage counter="1/3" />
+    <SubscribeMessage counter="1/3" target="_top" />
     <br/>
   </div>
 );

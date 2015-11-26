@@ -7,6 +7,8 @@ export default class SubscribeMessage extends React.Component {
       className: React.PropTypes.string,
       children: React.PropTypes.node,
       counter: React.PropTypes.string,
+      href: React.PropTypes.string,
+      target: React.PropTypes.string,
       counterLabel: React.PropTypes.string,
     };
   }
@@ -21,12 +23,14 @@ export default class SubscribeMessage extends React.Component {
       ),
       counterLabel: 'articles read.',
       href: 'https://subscriptions.economist.com',
+      target: '_blank',
     };
   }
 
   render() {
+    const className = (this.props.className) ? ` ${this.props.className}` : ``;
     return (
-      <a className={`subscribe-message ${this.props.className}`} href="">
+      <a className={`subscribe-message${className}`} href={this.props.href} target={this.props.target}>
         <div className="subscribe-message__inner-wrapper">
           {(() => {
             if (this.props.counter) {
