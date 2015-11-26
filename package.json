@@ -132,7 +132,7 @@
   "dependencies": {
     "@economist/component-grid": "^1.2.2",
     "@economist/component-palette": "^1.2.0",
-    "@economist/component-typography": "^1.4.3"
+    "@economist/component-typography": "^1.5.0"
   },
   "devDependencies": {
     "@economist/component-devpack": "^3.4.3",
