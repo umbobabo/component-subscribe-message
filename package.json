@@ -1,7 +1,7 @@
 {
   "name": "@economist/component-subscribe-message",
-  "version": "1.0.0",
-  "description": "A navigation masthead",
+  "version": "1.0.1",
+  "description": "Subscribe message box with optional counter of read articles",
   "author": "The Economist (http://economist.com)",
   "license": "LicenseRef-LICENSE",
   "repository": "git@github.com:economist-components/component-subscribe-message.git",
