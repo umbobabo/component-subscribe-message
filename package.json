@@ -1,6 +1,6 @@
 {
   "name": "@economist/component-subscribe-message",
-  "version": "1.0.4",
+  "version": "1.1.0",
   "description": "Subscribe message box with optional counter of read articles",
   "author": "The Economist (http://economist.com)",
   "license": "LicenseRef-LICENSE",
@@ -136,6 +136,7 @@
   },
   "devDependencies": {
     "@economist/component-devpack": "^3.4.3",
+    "@economist/component-link-button": "^1.4.1",
     "babel": "^5.8.23",
     "babel-core": "^5.8.29",
     "babel-loader": "^5.3.2",
@@ -161,12 +162,13 @@
     "npm-watch": "0.0.1",
     "parallelshell": "^2.0.0",
     "pre-commit": "^1.0.10",
-    "react": "^0.14.0",
+    "react": "^0.14.6",
     "react-addons-test-utils": "^0.14.0",
+    "react-i13n": "^2.0.2",
     "watchify": "^3.4.0"
   },
   "peerDependencies": {
-    "react": "^0.14.0"
+    "react": "^0.14.6"
   },
   "pre-commit": [
     "lint"
