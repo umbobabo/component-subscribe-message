@@ -10,6 +10,7 @@ export default class SubscribeMessage extends React.Component {
       href: React.PropTypes.string,
       target: React.PropTypes.string,
       counterLabel: React.PropTypes.string,
+      renderSubscribeLink: React.PropTypes.func,
     };
   }
 
@@ -29,20 +30,28 @@ export default class SubscribeMessage extends React.Component {
 
   render() {
     const className = (this.props.className) ? ` ${this.props.className}` : ``;
-    return (
-      <a className={`subscribe-message${className}`} href={this.props.href} target={this.props.target}>
-        <div className="subscribe-message__inner-wrapper">
-          {(() => {
-            if (this.props.counter) {
-              return (<div className="subscribe-message__counter">
-                  <div className="subscribe-message__count">{this.props.counter}</div>
-                  <div className="subscribe-message__counter-label">{this.props.counterLabel}</div>
-                </div>);
-            }
-          })()}
-        {this.props.children}
-        </div>
-      </a>
+
+    const children = (<div className="subscribe-message__inner-wrapper">
+      {(() => {
+        if (this.props.counter) {
+          return (<div className="subscribe-message__counter">
+              <div className="subscribe-message__count">{this.props.counter}</div>
+              <div className="subscribe-message__counter-label">{this.props.counterLabel}</div>
+            </div>);
+        }
+      })()}
+    {this.props.children}
+    </div>);
+
+    const subscribeLinkProps = {
+      className: `subscribe-message${className}`,
+      href: this.props.href,
+      target: this.props.target,
+      children,
+    };
+    const subscribeLink = this.props.renderSubscribeLink ? this.props.renderSubscribeLink(subscribeLinkProps) : (
+      <a {...subscribeLinkProps}></a>
     );
+    return subscribeLink;
   }
 }

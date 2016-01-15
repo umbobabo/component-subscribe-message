@@ -1,6 +1,7 @@
 import SubscribeMessage from '../index.es6';
 import TestUtils from 'react-addons-test-utils';
 import React from 'react';
+import LinkButton from '@economist/component-link-button';
 /* eslint-disable newline-after-var */
 describe(`A subscribe message`, () => {
   describe(`it's a React component`, () => {
@@ -64,6 +65,26 @@ describe(`A subscribe message`, () => {
 
       message.props.className.should.equal('justaclass');
       message.props.children.should.be.equal('Cool');
+    });
+    it(`provide capabilty to change the render component of the link via the renderSubscribeLink prop`, () => {
+      const shallowRenderer = TestUtils.createRenderer();
+      /* eslint-disable react/display-name */
+      shallowRenderer.render(React.createElement(SubscribeMessage,
+         { children: 'Subscribe here!', renderSubscribeLink: (props) => {
+           return (<LinkButton
+             icon={{
+               icon: 'facebook',
+             }}
+             {...props}
+                   />);
+         } }));
+      const button = shallowRenderer.getRenderOutput();
+      const componentChildren = button.props.children.props.children;
+      const message = componentChildren[1];
+
+      button.type.should.equal(LinkButton);
+      button.props.icon.should.equal('facebook');
+      message.should.be.equal('Subscribe here!');
     });
   });
 });
