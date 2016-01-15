@@ -83,7 +83,9 @@ describe(`A subscribe message`, () => {
       const message = componentChildren[1];
 
       button.type.should.equal(LinkButton);
-      button.props.icon.should.equal('facebook');
+      button.props.icon.should.deep.equal({
+        icon: 'facebook',
+      });
       message.should.be.equal('Subscribe here!');
     });
   });
