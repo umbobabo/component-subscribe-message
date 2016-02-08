@@ -8,7 +8,7 @@
   width: 100%;
   display: table;
   box-sizing: border-box;
-  font-family: var(--subscribe-message__font-family, var(--fontfamily-body));
+  font-family: var(--subscribe-message__font-family, var(--fontfamily-sans));
   position: relative;
 }
 
@@ -34,8 +34,7 @@
   text-indent: 0.3em;
   text-align: center;
   font-size: var(--subscribe-message__counter__font-size, var(--text-size-step--4));
-  /* TODO: Review this when we have the font */
-  font-family: 'Halifax Bold';
+  font-weight: bold;
 }
 
 .subscribe-message__counter-label {
@@ -43,8 +42,7 @@
   display: inline-block;
   margin-right: var(--subscribe-message__counter-label__margin-right, var(--grid-gutter-m));
   font-size: var(--subscribe-message__counter-label__font-size, var(--text-size-step--3));
-  /* TODO: Review this when we have the font */
-  font-family: 'Halifax Light';
+  font-weight: 300;
 }
 
 .subscribe-message__message {
@@ -65,8 +63,7 @@
 
 .subscribe-message__additional-title {
   margin-left: 0.4em;
-  /* TODO: Review this when we have the font */
-  font-family: 'Halifax Light';
+  font-weight: 300;
   color: var(--subscribe-message__additional-title__color, var(--color-moscow));
 }
 
