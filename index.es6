@@ -1,57 +1,26 @@
 import React from 'react';
+import BarWrapper from '@economist/component-bar-wrapper'
+import LinkButton from '@economist/component-link-button'
 
-export default class SubscribeMessage extends React.Component {
-
-  static get propTypes() {
-    return {
-      className: React.PropTypes.string,
-      children: React.PropTypes.node,
-      counter: React.PropTypes.string,
-      href: React.PropTypes.string,
-      target: React.PropTypes.string,
-      counterLabel: React.PropTypes.string,
-      renderSubscribeLink: React.PropTypes.func,
-    };
-  }
-
-  static get defaultProps() {
-    return {
-      children: (
-        <div className="subscribe-message__message">
-          <span className="subscribe-message__title">SUBSCRIBE NOW</span>
-          <span className="subscribe-message__additional-title">for unlimited access to The Economist</span>
-        </div>
-      ),
-      counterLabel: 'articles read.',
-      href: 'https://subscriptions.economist.com',
-      target: '_blank',
-    };
-  }
-
-  render() {
-    const className = (this.props.className) ? ` ${this.props.className}` : ``;
-
-    const children = (<div className="subscribe-message__inner-wrapper">
-      {(() => {
-        if (this.props.counter) {
-          return (<div className="subscribe-message__counter">
-              <div className="subscribe-message__count">{this.props.counter}</div>
-              <div className="subscribe-message__counter-label">{this.props.counterLabel}</div>
-            </div>);
-        }
-      })()}
-    {this.props.children}
-    </div>);
-
-    const subscribeLinkProps = {
-      className: `subscribe-message${className}`,
-      href: this.props.href,
-      target: this.props.target,
-      children,
-    };
-    const subscribeLink = this.props.renderSubscribeLink ? this.props.renderSubscribeLink(subscribeLinkProps) : (
-      <a {...subscribeLinkProps}></a>
-    );
-    return subscribeLink;
-  }
+export default function SubscribeMessage({
+  renderSubscribeLink,
+  productImage = '/assets/product-image.png',
+  href = 'https://subscriptions.economist.com'
+}) {
+  const SubscribeLinkComponent = renderSubscribeLink || LinkButton;
+  return (
+    <BarWrapper className="subscribe-message">
+      <img className="subscribe-message__image" src={productImage} />
+      <div className="subscribe-message__secondary-cta">
+        Unlock the bigger picture every week with <em>The Economist</em>
+      </div>
+      <div className="subscribe-message__main-cta">
+        Subscribe now and enjoy great savings
+      </div>
+      <SubscribeLinkComponent className="subscribe-message__subscribe-link" href={href} target="_blank">
+        Subscription offers
+      </SubscribeLinkComponent>
+    </BarWrapper>
+  );
 }
+
