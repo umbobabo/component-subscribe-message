@@ -11,16 +11,18 @@
   padding: var(--subscribe-message-padding, var(--grid-gutter-s));
 }
 
-.subscribe-message .bar-wrapper--container {
+.subscribe-message--container {
   max-width: inherit;
 }
 
-.subscribe-message .bar-wrapper--close-wrapper {
+.subscribe-message--close-wrapper {
   right: 0;
   top: 0;
 }
 
-.subscribe-message .bar-wrapper--close {
+.subscribe-message--close {
+  height: var(--text-size-step-1);
+  width: var(--text-size-step-1);
   fill: var(--subscribe-message__color, var(--color-thimphu));
 }
 
@@ -38,11 +40,6 @@
   ;
 }
 
-.subscribe-message .bar-wrapper--close {
-  height: var(--text-size-step-1);
-  width: var(--text-size-step-1);
-}
-
 @media screen and (max-width: 849px) {
   .subscribe-message__image {
     display: none;
@@ -50,7 +47,7 @@
 }
 
 @media screen and (min-width: 850px) {
-  .subscribe-message .bar-wrapper--container {
+  .subscribe-message--container {
     padding-left: calc(
       182px +
       var(--subscribe-message-image-margin, var(--grid-spacing-mouse))
@@ -81,7 +78,7 @@
 }
 
 @media screen and (min-width: 1400px) {
-  .subscribe-message .bar-wrapper--container {
+  .subscribe-message--container {
     text-align: right;
   }
   .subscribe-message__secondary-cta {
@@ -91,6 +88,7 @@
     margin-top: inherit;
   }
   .subscribe-message__subscribe-link {
+    /* Undo its own vertical padding so as to align with the text */
     margin-top:
       calc(-1 *
         var(--subscribe-message-subscribe-link-vertical-padding, var(--grid-spacing-hedgehog)));

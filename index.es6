@@ -9,7 +9,7 @@ export default function SubscribeMessage({
 }) {
   const SubscribeLinkComponent = renderSubscribeLink || LinkButton;
   return (
-    <BarWrapper className="subscribe-message">
+    <BarWrapper className="subscribe-message" classNamePrefix="subscribe-message">
       <img className="subscribe-message__image" src={productImage} />
       <div className="subscribe-message__secondary-cta">
         Unlock the bigger picture every week with <em>The Economist</em>
