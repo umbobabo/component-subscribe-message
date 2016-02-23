@@ -1,3 +1,4 @@
+if (typeof navigator !== 'undefined') require('svg4everybody')()
 require('babel-core/polyfill')
 import SubscribeMessage from './index';
 import React from 'react';
