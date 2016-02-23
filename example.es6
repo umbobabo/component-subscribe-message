@@ -3,8 +3,9 @@ import SubscribeMessage from './index';
 import React from 'react';
 /* eslint-disable id-match */
 /* eslint-disable  react/display-name */
+import LinkButton from '@economist/component-link-button';
 import { createI13nNode } from 'react-i13n';
-const I13nSubscribeLink = createI13nNode('a', {
+const I13nSubscribeLink = createI13nNode(LinkButton, {
   isLeafNode: true,
   bindClickEvent: true,
   follow: true,
