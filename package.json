@@ -12,7 +12,7 @@
     "*.js",
     "*.es6",
     "*.css",
-    "assets/*",
+    "assets/product-image.png",
     "!karma.conf.js",
     "!testbundle.js"
   ],
