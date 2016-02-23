@@ -29,10 +29,14 @@
 .subscribe-message__main-cta,
 .subscribe-message__subscribe-link {
   margin-top: var(--subscribe-message-spacing, var(--grid-spacing-rabbit));
+}
+
+.subscribe-message__main-cta {
   font-size: var(--subscribe-message-main-cta-font-size, var(--text-size-step--2));
 }
 
 .subscribe-message__subscribe-link {
+  font-size: var(--subscribe-message-main-cta-font-size, var(--text-size-step--1));
   background: var(--subscribe-message-subscribe-link-background, var(--color-economist));
   padding:
     var(--subscribe-message-subscribe-link-vertical-padding, var(--grid-spacing-hedgehog))
