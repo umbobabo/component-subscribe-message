@@ -54,7 +54,7 @@
   .subscribe-message--container {
     padding-left: calc(
       182px +
-      var(--subscribe-message-image-margin, var(--grid-spacing-mouse))
+      var(--subscribe-message-image-margin, var(--grid-spacing-hedgehog))
     );
   }
 
