@@ -3,6 +3,11 @@
 @import "@economist/component-grid";
 @import "@economist/component-link-button";
 
+:root {
+  --subscribe-message-image-default-width: 182px;
+  --subscribe-message-image-default-height: 135px;
+}
+
 .subscribe-message {
   font-size: 1rem;
   background: var(--subscribe-message__background, var(--color-kiev));
@@ -53,7 +58,7 @@
 @media screen and (min-width: 850px) {
   .subscribe-message--container {
     padding-left: calc(
-      182px +
+      var(--subscribe-message-image-width, var(--subscribe-message-image-default-width)) +
       var(--subscribe-message-image-margin, var(--grid-spacing-hedgehog))
     );
   }
@@ -62,8 +67,8 @@
     float: left;
     position: absolute;
     /* Image natural dimensions */
-    width: 182px;
-    height: 135px;
+    width: var(--subscribe-message-image-width, var(--subscribe-message-image-default-width));
+    height: var(--subscribe-message-image-height, var(--subscribe-message-image-default-height));
 
     left: 0;
     bottom: 0;
