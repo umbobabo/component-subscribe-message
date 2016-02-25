@@ -1,89 +1,106 @@
+@import "@economist/component-bar-wrapper";
+@import "@economist/component-typography";
+@import "@economist/component-grid";
+@import "@economist/component-link-button";
+
+:root {
+  --subscribe-message-image-default-width: 182px;
+  --subscribe-message-image-default-height: 135px;
+}
+
 .subscribe-message {
   font-size: 1rem;
-  background: var(--subscribe-message__background, var(--color-berlin));
-  color: var(--subscribe-message__color, var(--color-beijing));
-  padding: var(--subscribe-message__padding-h, var(--grid-spacing-rabbit)) var(--subscribe-message__padding-v, var(--grid-gutter-s));
-  text-decoration: none;
-  display: block;
-  width: 100%;
-  display: table;
-  box-sizing: border-box;
-  font-family: var(--subscribe-message__font-family, var(--fontfamily-sans));
-  position: relative;
+  background: var(--subscribe-message__background, var(--color-kiev));
+  color: var(--subscribe-message__color, var(--color-thimphu));
+  max-width: inherit;
+  padding: var(--subscribe-message-padding, var(--grid-gutter-s));
 }
 
-.subscribe-message__inner-wrapper {
-  display: table-row;
+.subscribe-message--container {
+  max-width: inherit;
 }
 
-.subscribe-message__count {
-  line-height: 1.2em;
-  vertical-align: middle;
-  height: 1em;
-  padding: var(--subscribe-message__counter__padding, 0.5em);
-  margin-right: 0.5em;
-}
-
-.subscribe-message__count {
-  float: left;
-  background: var(--subscribe-message__counter__background, var(--color-honolulu));
-  color: var(--subscribe-message__counter__color, var(--color-thimphu));
-  border-radius: var(--subscribe-message__counter__border-radius, 06em);
-  display: block;
-  letter-spacing: 0.3em;
-  text-indent: 0.3em;
-  text-align: center;
-  font-size: var(--subscribe-message__counter__font-size, var(--text-size-step--4));
-  font-weight: bold;
-}
-
-.subscribe-message__counter-label {
-  margin: 0 0.20em;
-  display: inline-block;
-  margin-right: var(--subscribe-message__counter-label__margin-right, var(--grid-gutter-m));
-  font-size: var(--subscribe-message__counter-label__font-size, var(--text-size-step--3));
-  font-weight: 300;
-}
-
-.subscribe-message__message {
-  display: table-cell;
-  vertical-align: middle;
-  line-height: 1.7em;
-}
-
-.subscribe-message__counter {
-  white-space: nowrap;
-  position: absolute;
+.subscribe-message--close-wrapper {
+  right: 0;
   top: 0;
-  left: 0;
-  bottom: 0;
-  right: auto;
-  margin: var(--subscribe-message__padding-h, var(--grid-spacing-rabbit)) var(--subscribe-message__padding-v, var(--grid-gutter-s));
 }
 
-.subscribe-message__additional-title {
-  margin-left: 0.4em;
-  font-weight: 300;
-  color: var(--subscribe-message__additional-title__color, var(--color-moscow));
+.subscribe-message--close {
+  height: var(--text-size-step-1);
+  width: var(--text-size-step-1);
+  fill: var(--subscribe-message__color, var(--color-thimphu));
 }
 
-.subscribe-message__message {
-  width: 100%;
-  text-align: center;
-  font-size: var(--subscribe-message__message__font-size, var(--text-size-step--2));
+.subscribe-message__main-cta,
+.subscribe-message__subscribe-link {
+  margin-top: var(--subscribe-message-spacing, var(--grid-spacing-rabbit));
 }
 
-@media (width <= 800px) and (width >= 569px) {
-  .subscribe-message__counter + .subscribe-message__message {
-    padding-left: var(--subscribe-message__counter__mobile-padding-left, 100px);
-  }
+.subscribe-message__main-cta {
+  font-size: var(--subscribe-message-main-cta-font-size, var(--text-size-step--2));
 }
 
-@media (width <= 568px) {
-  .subscribe-message__additional-title {
+.subscribe-message__subscribe-link {
+  font-size: var(--subscribe-message-main-cta-font-size, var(--text-size-step--1));
+  background: var(--subscribe-message-subscribe-link-background, var(--color-economist));
+  padding:
+    var(--subscribe-message-subscribe-link-vertical-padding, var(--grid-spacing-hedgehog))
+    var(--subscribe-message-subscribe-link-horizontal-padding, var(--grid-spacing-sloth))
+  ;
+}
+
+@media screen and (max-width: 849px) {
+  .subscribe-message__image {
     display: none;
   }
-  .subscribe-message__counter + .subscribe-message__message {
-    padding-left: var(--subscribe-message__counter__mobile-padding-left, 100px);
+}
+
+@media screen and (min-width: 850px) {
+  .subscribe-message--container {
+    padding-left: calc(
+      var(--subscribe-message-image-width, var(--subscribe-message-image-default-width)) +
+      var(--subscribe-message-image-margin, var(--grid-spacing-hedgehog))
+    );
+  }
+
+  .subscribe-message__image {
+    float: left;
+    position: absolute;
+    /* Image natural dimensions */
+    width: var(--subscribe-message-image-width, var(--subscribe-message-image-default-width));
+    height: var(--subscribe-message-image-height, var(--subscribe-message-image-default-height));
+
+    left: 0;
+    bottom: 0;
+  }
+
+  .subscribe-message__main-cta {
+    display: inline-block;
+    margin-right: var(--subscribe-message-subscribe-link-horizontal-padding, var(--grid-spacing-sloth));
+    font-size: 1em;
+  }
+  .subscribe-message__subscribe-link {
+    margin-bottom:
+      calc(-1 *
+        var(--subscribe-message-subscribe-link-vertical-padding, var(--grid-spacing-hedgehog)));
   }
 }
+
+@media screen and (min-width: 1400px) {
+  .subscribe-message--container {
+    text-align: right;
+  }
+  .subscribe-message__secondary-cta {
+    float: left;
+  }
+  .subscribe-message__main-cta {
+    margin-top: inherit;
+  }
+  .subscribe-message__subscribe-link {
+    /* Undo its own vertical padding so as to align with the text */
+    margin-top:
+      calc(-1 *
+        var(--subscribe-message-subscribe-link-vertical-padding, var(--grid-spacing-hedgehog)));
+  }
+}
+

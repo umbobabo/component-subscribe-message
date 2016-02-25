@@ -1,3 +1,3 @@
 # component-subscribe-message
 
-It provides a subscribe message bar with an optional counter for read articles.
+It provides a subscription call to action with the purpose of asking the user to subscribe

@@ -1,6 +1,6 @@
 {
   "name": "@economist/component-subscribe-message",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "description": "Subscribe message box with optional counter of read articles",
   "author": "The Economist (http://economist.com)",
   "license": "LicenseRef-LICENSE",
@@ -12,7 +12,7 @@
     "*.js",
     "*.es6",
     "*.css",
-    "assets/*",
+    "assets/product-image.png",
     "!karma.conf.js",
     "!testbundle.js"
   ],
@@ -127,10 +127,13 @@
     "watch": "parallelshell 'npm run doc:watch' 'npm run prepublish:watch' 'npm run serve'"
   },
   "dependencies": {
+    "@economist/component-bar-wrapper": "^2.0.1",
     "@economist/component-grid": "^1.2.2",
+    "@economist/component-link-button": "^1.5.0",
     "@economist/component-palette": "^1.2.0",
     "@economist/component-typography": "^3.1.1",
-    "react-i13n": "^2.0.2"
+    "react-i13n": "^2.0.2",
+    "svg4everybody": "^2.0.3"
   },
   "devDependencies": {
     "@economist/component-devpack": "^3.4.3",
@@ -161,7 +164,6 @@
     "parallelshell": "^2.0.0",
     "pre-commit": "^1.0.10",
     "react": "^0.14.6",
-    "react-addons-test-utils": "^0.14.0",
     "watchify": "^3.4.0"
   },
   "peerDependencies": {
