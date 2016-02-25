@@ -71,7 +71,7 @@
 
   .subscribe-message__main-cta {
     display: inline-block;
-    margin-right: var(--subscribe-message-subscribe-link-horizontal-padding, var(--grid-spacing-sheep));
+    margin-right: var(--subscribe-message-subscribe-link-horizontal-padding, var(--grid-spacing-sloth));
     font-size: 1em;
   }
   .subscribe-message__subscribe-link {
