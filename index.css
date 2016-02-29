@@ -17,6 +17,7 @@
 }
 
 .subscribe-message--container {
+  box-sizing: border-box;
   max-width: inherit;
 }
 
