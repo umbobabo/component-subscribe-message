@@ -169,6 +169,9 @@
   "peerDependencies": {
     "react": "^0.14.6"
   },
+  "assets": [
+    "assets/icons.svg"
+  ],
   "pre-commit": [
     "lint"
   ]
