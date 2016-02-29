@@ -170,7 +170,7 @@
     "react": "^0.14.6"
   },
   "assets": [
-    "assets/icons.svg"
+    "assets/product-image.png"
   ],
   "pre-commit": [
     "lint"
