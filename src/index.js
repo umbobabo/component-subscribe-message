@@ -1,13 +1,13 @@
+import BarWrapper from '@economist/component-bar-wrapper';
+import LinkButton from '@economist/component-link-button';
 import React from 'react';
-import BarWrapper from '@economist/component-bar-wrapper'
-import LinkButton from '@economist/component-link-button'
 
 export default function SubscribeMessage({
   renderSubscribeLink,
   renderCloseButton,
   onClose,
   productImage = '/assets/product-image.png',
-  href = 'https://subscriptions.economist.com'
+  href = 'https://subscriptions.economist.com',
 }) {
   const SubscribeLinkComponent = renderSubscribeLink || LinkButton;
   return (
@@ -31,3 +31,12 @@ export default function SubscribeMessage({
   );
 }
 
+if (process.env.NODE_ENV !== 'production') {
+  SubscribeMessage.propTypes = {
+    renderSubscribeLink: React.PropTypes.func,
+    renderCloseButton: React.PropTypes.func,
+    onClose: React.PropTypes.func,
+    productImage: React.PropTypes.string,
+    href: React.PropTypes.string,
+  };
+}

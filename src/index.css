@@ -1,7 +1,7 @@
-@import "@economist/component-bar-wrapper";
-@import "@economist/component-typography";
-@import "@economist/component-grid";
-@import "@economist/component-link-button";
+@import '@economist/component-bar-wrapper';
+@import '@economist/component-typography';
+@import '@economist/component-grid';
+@import '@economist/component-link-button';
 
 :root {
   --subscribe-message-image-default-width: 182px;
@@ -9,11 +9,11 @@
 }
 
 .subscribe-message {
-  font-size: 1rem;
-  background: var(--subscribe-message__background, var(--color-kiev));
-  color: var(--subscribe-message__color, var(--color-thimphu));
   max-width: inherit;
   padding: var(--subscribe-message-padding, var(--grid-gutter-s));
+  color: var(--subscribe-message__color, var(--color-thimphu));
+  font-size: 1rem;
+  background: var(--subscribe-message__background, var(--color-kiev));
 }
 
 .subscribe-message--container {
@@ -22,32 +22,28 @@
 }
 
 .subscribe-message--close-wrapper {
-  right: 0;
   top: 0;
+  right: 0;
 }
 
 .subscribe-message--close {
-  height: var(--text-size-step-1);
   width: var(--text-size-step-1);
+  height: var(--text-size-step-1);
   fill: var(--subscribe-message__color, var(--color-thimphu));
 }
 
-.subscribe-message__main-cta,
-.subscribe-message__subscribe-link {
-  margin-top: var(--subscribe-message-spacing, var(--grid-spacing-hedgehog));
-}
-
 .subscribe-message__main-cta {
+  margin-top: var(--subscribe-message-spacing, var(--grid-spacing-hedgehog));
   font-size: var(--subscribe-message-main-cta-font-size, var(--text-size-step--2));
 }
 
 .subscribe-message__subscribe-link {
-  font-size: var(--subscribe-message-main-cta-font-size, var(--text-size-step--1));
-  background: var(--subscribe-message-subscribe-link-background, var(--color-economist));
+  margin-top: var(--subscribe-message-spacing, var(--grid-spacing-hedgehog));
   padding:
     var(--subscribe-message-subscribe-link-vertical-padding, var(--grid-spacing-hedgehog))
-    var(--subscribe-message-subscribe-link-horizontal-padding, var(--grid-spacing-sloth))
-  ;
+    var(--subscribe-message-subscribe-link-horizontal-padding, var(--grid-spacing-sloth));
+  font-size: var(--subscribe-message-main-cta-font-size, var(--text-size-step--1));
+  background: var(--subscribe-message-subscribe-link-background, var(--color-economist));
 }
 
 .subscribe-message__image {
@@ -58,42 +54,52 @@
   .subscribe-message__image {
     float: left;
     position: absolute;
+    bottom: 0;
+    left: 0;
     /* Image natural dimensions */
     width: var(--subscribe-message-image-width, var(--subscribe-message-image-default-width));
     height: var(--subscribe-message-image-height, var(--subscribe-message-image-default-height));
-
-    left: 0;
-    bottom: 0;
   }
-
   .subscribe-message__main-cta {
     display: inline-block;
     font-size: 1em;
   }
   .subscribe-message__subscribe-link {
     float: right;
-    margin-top: calc(
-      -1 *
+    /* stylelint-disable function-calc-no-unspaced-operator */
+    /* Disabled because they bug out with newlines. See
+       https://github.com/stylelint/stylelint/issues/857 (function-calc-no-unspaced-operator)
+    */
+    margin-top:
       calc(
+        -1 *
         calc(
-          var(--subscribe-message-main-cta-font-size, var(--text-size-step--1))
-        ) +
-        var(--subscribe-message-subscribe-link-vertical-padding, var(--grid-spacing-hedgehog)) -
-        var(--subscribe-message-spacing, var(--grid-spacing-hedgehog))
-      ) *
-      var(--subscribe-message-main-cta-font-size, var(--text-size-step--1)));
+          calc(
+            var(--subscribe-message-main-cta-font-size, var(--text-size-step--1))
+          ) +
+          var(--subscribe-message-subscribe-link-vertical-padding, var(--grid-spacing-hedgehog)) -
+          var(--subscribe-message-spacing, var(--grid-spacing-hedgehog))
+        ) *
+        var(--subscribe-message-main-cta-font-size, var(--text-size-step--1))
+      );
+    /* stylelint-enable function-calc-no-unspaced-operator */
   }
 }
 
 @media screen and (min-width: 1300px) {
   .subscribe-message--container {
-    padding-left: calc(
-      var(--subscribe-message-image-width, var(--subscribe-message-image-default-width)) +
-      var(--subscribe-message-image-margin, var(--grid-spacing-hedgehog))
-    );
+    /* stylelint-disable function-calc-no-unspaced-operator */
+    /* Disabled because they bug out with newlines. See
+       https://github.com/stylelint/stylelint/issues/857 (function-calc-no-unspaced-operator)
+    */
+    padding-left:
+      calc(
+        var(--subscribe-message-image-width, var(--subscribe-message-image-default-width)) +
+        var(--subscribe-message-image-margin, var(--grid-spacing-hedgehog))
+      );
+    /* stylelint-enable function-calc-no-unspaced-operator */
   }
   .subscribe-message__image {
     display: block;
   }
 }
-
