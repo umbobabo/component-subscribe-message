@@ -34,7 +34,7 @@
 
 .subscribe-message__main-cta,
 .subscribe-message__subscribe-link {
-  margin-top: var(--subscribe-message-spacing, var(--grid-spacing-rabbit));
+  margin-top: var(--subscribe-message-spacing, var(--grid-spacing-hedgehog));
 }
 
 .subscribe-message__main-cta {
@@ -50,20 +50,11 @@
   ;
 }
 
-@media screen and (max-width: 849px) {
-  .subscribe-message__image {
-    display: none;
-  }
+.subscribe-message__image {
+  display: none;
 }
 
-@media screen and (min-width: 850px) {
-  .subscribe-message--container {
-    padding-left: calc(
-      var(--subscribe-message-image-width, var(--subscribe-message-image-default-width)) +
-      var(--subscribe-message-image-margin, var(--grid-spacing-hedgehog))
-    );
-  }
-
+@media screen and (min-width: 950px) {
   .subscribe-message__image {
     float: left;
     position: absolute;
@@ -77,31 +68,32 @@
 
   .subscribe-message__main-cta {
     display: inline-block;
-    margin-right: var(--subscribe-message-subscribe-link-horizontal-padding, var(--grid-spacing-sloth));
     font-size: 1em;
   }
   .subscribe-message__subscribe-link {
-    margin-bottom:
-      calc(-1 *
-        var(--subscribe-message-subscribe-link-vertical-padding, var(--grid-spacing-hedgehog)));
+    float: right;
+    margin-top: calc(
+      -1 *
+      calc(
+        calc(
+          var(--subscribe-message-main-cta-font-size, var(--text-size-step--1))
+        ) +
+        var(--subscribe-message-subscribe-link-vertical-padding, var(--grid-spacing-hedgehog)) -
+        var(--subscribe-message-spacing, var(--grid-spacing-hedgehog))
+      ) *
+      var(--subscribe-message-main-cta-font-size, var(--text-size-step--1)));
   }
 }
 
-@media screen and (min-width: 1400px) {
+@media screen and (min-width: 1300px) {
   .subscribe-message--container {
-    text-align: right;
+    padding-left: calc(
+      var(--subscribe-message-image-width, var(--subscribe-message-image-default-width)) +
+      var(--subscribe-message-image-margin, var(--grid-spacing-hedgehog))
+    );
   }
-  .subscribe-message__secondary-cta {
-    float: left;
-  }
-  .subscribe-message__main-cta {
-    margin-top: inherit;
-  }
-  .subscribe-message__subscribe-link {
-    /* Undo its own vertical padding so as to align with the text */
-    margin-top:
-      calc(-1 *
-        var(--subscribe-message-subscribe-link-vertical-padding, var(--grid-spacing-hedgehog)));
+  .subscribe-message__image {
+    display: block;
   }
 }
 
