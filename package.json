@@ -1,6 +1,6 @@
 {
   "name": "@economist/component-subscribe-message",
-  "version": "3.2.1",
+  "version": "3.2.2",
   "description": "Subscribe message box with optional counter of read articles",
   "author": "The Economist (http://economist.com)",
   "license": "LicenseRef-LICENSE",
