@@ -19,5 +19,12 @@ describe(`A subscribe message`, () => {
       const link = subscriptionMessage.props.children[subscriptionMessage.props.children.length - 1];
       link.type.should.equal(renderSubscribeLink);
     });
+    it(`passes any renderCloseButton onto BarWrapper`, () => {
+      const renderCloseButton = props => <p {...props}>foobar</p>
+      const subscriptionMessage = SubscribeMessage({ renderCloseButton });
+
+      subscriptionMessage.type.should.equal(BarWrapper);
+      subscriptionMessage.props.renderCloseButton.should.equal(renderCloseButton);
+    });
   });
 });

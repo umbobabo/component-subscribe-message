@@ -127,7 +127,7 @@
     "watch": "parallelshell 'npm run doc:watch' 'npm run prepublish:watch' 'npm run serve'"
   },
   "dependencies": {
-    "@economist/component-bar-wrapper": "^2.0.1",
+    "@economist/component-bar-wrapper": "^2.1.0",
     "@economist/component-grid": "^1.2.2",
     "@economist/component-link-button": "^1.5.0",
     "@economist/component-palette": "^1.2.0",
