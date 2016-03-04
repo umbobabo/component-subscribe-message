@@ -9,12 +9,7 @@
   "license": "MIT",
   "author": "The Economist (http://economist.com)",
   "files": [
-    "*.js",
-    "*.es6",
-    "*.css",
     "assets/product-image.png",
-    "!karma.conf.js",
-    "!testbundle.js",
     "lib/*",
     "assets/*"
   ],
