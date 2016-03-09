@@ -66,7 +66,7 @@
   }
   .subscribe-message__subscribe-link {
     float: right;
-    /* stylelint-disable function-calc-no-unspaced-operator */
+    /* stylelint-disable function-calc-no-unspaced-operator, function-parentheses-space-inside */
     /* Disabled because they bug out with newlines. See
        https://github.com/stylelint/stylelint/issues/857 (function-calc-no-unspaced-operator)
     */
@@ -82,13 +82,13 @@
         ) *
         var(--subscribe-message-main-cta-font-size, var(--text-size-step--1))
       );
-    /* stylelint-enable function-calc-no-unspaced-operator */
+    /* stylelint-enable function-calc-no-unspaced-operator, function-parentheses-space-inside */
   }
 }
 
 @media screen and (min-width: 1300px) {
   .subscribe-message--container {
-    /* stylelint-disable function-calc-no-unspaced-operator */
+    /* stylelint-disable function-calc-no-unspaced-operator, function-parentheses-space-inside */
     /* Disabled because they bug out with newlines. See
        https://github.com/stylelint/stylelint/issues/857 (function-calc-no-unspaced-operator)
     */
@@ -97,7 +97,7 @@
         var(--subscribe-message-image-width, var(--subscribe-message-image-default-width)) +
         var(--subscribe-message-image-margin, var(--grid-spacing-hedgehog))
       );
-    /* stylelint-enable function-calc-no-unspaced-operator */
+    /* stylelint-enable function-calc-no-unspaced-operator, function-parentheses-space-inside  */
   }
   .subscribe-message__image {
     display: block;
