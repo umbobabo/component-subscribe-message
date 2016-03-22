@@ -1,5 +1,4 @@
 @import '@economist/component-bar-wrapper';
-@import '@economist/component-typography';
 @import '@economist/component-grid';
 @import '@economist/component-link-button';
 
@@ -27,14 +26,14 @@
 }
 
 .subscribe-message--close {
-  width: var(--text-size-step-1);
-  height: var(--text-size-step-1);
+  width: var(--subscribe-message--close-width, 1.13em);
+  height: var(--subscribe-message--close-height, 1.13em);
   fill: var(--subscribe-message__color, var(--color-thimphu));
 }
 
 .subscribe-message__main-cta {
   margin-top: var(--subscribe-message-spacing, var(--grid-spacing-hedgehog));
-  font-size: var(--subscribe-message-main-cta-font-size, var(--text-size-step--2));
+  font-size: var(--subscribe-message-main-cta-font-size, 0.79em);
 }
 
 .subscribe-message__subscribe-link {
@@ -42,7 +41,7 @@
   padding:
     var(--subscribe-message-subscribe-link-vertical-padding, var(--grid-spacing-hedgehog))
     var(--subscribe-message-subscribe-link-horizontal-padding, var(--grid-spacing-sloth));
-  font-size: var(--subscribe-message-main-cta-font-size, var(--text-size-step--1));
+  font-size: var(--subscribe-message-main-cta-font-size, 0.89em);
   background: var(--subscribe-message-subscribe-link-background, var(--color-economist));
 }
 
@@ -75,12 +74,14 @@
         -1 *
         calc(
           calc(
-            var(--subscribe-message-main-cta-font-size, var(--text-size-step--1))
-          ) +
+            var(--subscribe-message-main-cta-font-size, 0.89em)
+              )
+            ) +
           var(--subscribe-message-subscribe-link-vertical-padding, var(--grid-spacing-hedgehog)) -
           var(--subscribe-message-spacing, var(--grid-spacing-hedgehog))
-        ) *
-        var(--subscribe-message-main-cta-font-size, var(--text-size-step--1))
+          ) *
+      var(--subscribe-message-main-cta-font-size, 0.89em)
+      )
       );
     /* stylelint-enable function-calc-no-unspaced-operator, function-parentheses-space-inside */
   }
