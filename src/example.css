@@ -2,3 +2,12 @@
 @import '@economist/component-palette';
 @import '@economist/component-grid';
 @import 'index.css';
+
+
+.subscribe-message--container {
+  max-width: inherit;
+}
+
+.bar-wrapper--container {
+  max-width: 1000px;
+}
