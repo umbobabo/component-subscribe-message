@@ -42,7 +42,6 @@
     "prebuild:css": "mkdir -p $npm_package_directories_lib",
     "build:css": "cp $npm_package_directories_src/*.css $npm_package_directories_lib",
     "build:js": "babel $npm_package_directories_src -d $npm_package_directories_lib --source-maps inline",
-    "ci": "sh ./build.sh",
     "predoc": "mkdir -p $npm_package_directories_site",
     "doc": "npm-run-all --parallel doc:*",
     "doc:assets": "npm-assets $npm_package_directories_site",
@@ -126,7 +125,7 @@
   "devDependencies": {
     "@economist/component-typography": "^3.1.3",
     "@economist/doc-pack": "^1.0.6",
-    "@economist/provision-react-component": "1.7.1",
+    "@economist/provision-react-component": "2.0.2",
     "babel": "^5.8.34",
     "babel-core": "^6.7.5",
     "babel-polyfill": "^6.6.1",
@@ -146,6 +145,7 @@
     "git-directory-deploy": "^1.5.0",
     "hbs-cli": "^1.0.0",
     "isparta": "^3.5.3",
+    "istanbul": "^0.4.3",
     "karma": "^0.13.22",
     "karma-browserify": "^5.0.3",
     "karma-coverage": "^0.5.5",
@@ -168,10 +168,8 @@
     "semantic-release": "^4.3.5",
     "stylelint": "^5.3.0",
     "stylelint-config-strict": "^4.0.0",
+    "travis-after-all": "^1.4.4",
     "validate-commit-msg": "^2.5.0",
     "watchify": "^3.7.0"
-  },
-  "peerDependencies": {
-    "react": "^0.14.6"
   }
 }
