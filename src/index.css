@@ -1,5 +1,4 @@
 @import '@economist/component-bar-wrapper';
-@import '@economist/component-grid';
 @import '@economist/component-link-button';
 
 :root {
@@ -37,6 +36,7 @@
     padding:
       var(--subscribe-message-subscribe-link-vertical-padding, var(--grid-spacing-hedgehog))
       var(--subscribe-message-subscribe-link-horizontal-padding, var(--grid-spacing-sloth));
+    color: var(--subscribe-message-subscribe-link-color, var(--color-thimphu));
     font-size: var(--subscribe-message-main-cta-font-size, 0.89em);
     background: var(--subscribe-message-subscribe-link-background, var(--color-economist));
   }
@@ -60,40 +60,26 @@
     }
     & .subscribe-message__subscribe-link {
       float: right;
-      /* stylelint-disable function-calc-no-unspaced-operator, function-parentheses-space-inside */
-      /* Disabled because they bug out with newlines. See
-         https://github.com/stylelint/stylelint/issues/857 (function-calc-no-unspaced-operator)
-      */
       margin-top:
         calc(
-          -1 *
           calc(
-            calc(
-              var(--subscribe-message-main-cta-font-size, 0.89em)
-                )
-              ) +
+            -1 *
+            var(--subscribe-message-main-cta-font-size, 0.89em) +
             var(--subscribe-message-subscribe-link-vertical-padding, var(--grid-spacing-hedgehog)) -
             var(--subscribe-message-spacing, var(--grid-spacing-hedgehog))
-            ) *
-        var(--subscribe-message-main-cta-font-size, 0.89em)
-        )
+          ) *
+          var(--subscribe-message-main-cta-font-size, 0.89em)
         );
-      /* stylelint-enable function-calc-no-unspaced-operator, function-parentheses-space-inside */
     }
   }
 
   @media screen and (min-width: 1300px) {
     & .subscribe-message--container {
-      /* stylelint-disable function-calc-no-unspaced-operator, function-parentheses-space-inside */
-      /* Disabled because they bug out with newlines. See
-         https://github.com/stylelint/stylelint/issues/857 (function-calc-no-unspaced-operator)
-      */
       padding-left:
         calc(
           var(--subscribe-message-image-width, var(--subscribe-message-image-default-width)) +
           var(--subscribe-message-image-margin, var(--grid-spacing-hedgehog))
         );
-      /* stylelint-enable function-calc-no-unspaced-operator, function-parentheses-space-inside  */
     }
     & .subscribe-message__image {
       display: block;
