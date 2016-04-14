@@ -117,7 +117,7 @@
   "dependencies": {
     "@economist/component-bar-wrapper": "^2.1.0",
     "@economist/component-grid": "^1.2.2",
-    "@economist/component-link-button": "^2.0.1",
+    "@economist/component-link-button": "^3.0.1",
     "@economist/component-palette": "^1.2.0",
     "react": "^0.14.8",
     "react-i13n": "^2.0.12",
