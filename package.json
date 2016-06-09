@@ -1,7 +1,7 @@
 {
   "name": "@economist/component-subscribe-message",
   "version": "0.0.0-development",
-  "description": "Subscribe message box with optional counter of read articles",
+  "description": "Subscribe message box",
   "homepage": "https://github.com/economist-components/component-subscribe-message",
   "bugs": {
     "url": "https://github.com/economist-components/component-subscribe-message/issues"
